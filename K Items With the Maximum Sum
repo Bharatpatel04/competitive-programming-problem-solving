@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int kItemsWithMaximumSum(int numOnes, int numZeros, int numNegOnes, int k) {
+        
+              if(numOnes>k)
+              return k;
+        
+        int sum=0;
+        int ans=0;
+        vector<int> vt;
+        
+       for(int i=0;i<numOnes;i++)
+            vt.push_back(1);
+        for(int i=0;i<numZeros;i++)
+            vt.push_back(0);
+         for(int i=0;i<numNegOnes;i++)
+            vt.push_back(-1);
+        
+        for(int i=0;i<k;i++)
+        {
+            sum+=vt[i];
+            
+        }
+        
+        return sum;
+        
+    }
+};
